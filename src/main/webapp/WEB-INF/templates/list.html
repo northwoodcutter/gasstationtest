@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link href="/resources/css/core.css" th:href="@{/resources/css/core.css}" rel="stylesheet"
+	media="screen" />
+<title>Сборки</title>
+</head>
+<body>
+	<div class="container">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Наименование сборки</th>
+					<th scope="col">ID двигателя</th>
+					<th scope="col">ID мотора</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dispenser: ${dispenserList}">
+					<td th:text="${dispenser.id}" />
+					<td th:text="${dispenser.name}" />
+					<td th:text="${dispenser.engineId}" />
+					<td th:text="${dispenser.pistolId}" />
+					<td><a th:href="@{/delete/{id}(id=${dispenser.id})}">Удалить</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
