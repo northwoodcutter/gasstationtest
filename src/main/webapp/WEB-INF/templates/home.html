@@ -45,14 +45,14 @@
 					class="form-control" th:field="*{name}">
 			</div>
 			<div class="form-group">
-				<label>Выберите модель пистолета</label> <br /> <select
+				<label>Выберите модель двигателя</label> <br /> <select
 					class="form-control" id="engineSelectId" th:field="*{engineId}">
 					<option th:each="engine: ${engineList}" th:value="${engine.id}"
 						th:text="${engine.name}"></option>
 				</select>
 			</div>
 			<div class="form-group">
-				<label>Выберите модель двигателя</label> <select
+				<label>Выберите модель пистолета</label> <select
 					class="form-control" id="pistolSelectId" th:field="*{pistolId}">
 					<option th:each="pistol: ${pistolList}" th:value="${pistol.id}"
 						th:text="${pistol.name}"></option>
